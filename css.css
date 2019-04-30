@@ -1,0 +1,175 @@
+:root {
+    --font-size-base: 15px;
+    --font-size-multiplier: 1.33;
+
+    --layout-bleeding: 40px;
+
+    --dictionary-carrier: "Что такое Кэрриер";
+
+    --transition-small: all ease-in-out 150ms;
+}
+
+body {
+    background-color: white;
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    margin: 60px;
+    font-variant-numeric: tabular-nums;
+}
+
+.no_scroll {
+    overflow: hidden;
+}
+
+h3 {
+    font-size: var(--font-size-base);
+}
+
+h2 {
+    font-size: calc(var(--font-size-base) * var(--font-size-multiplier));
+}
+
+h1 {
+    font-size: calc(var(--font-size-base) * var(--font-size-multiplier) * var(--font-size-multiplier));
+}
+
+h1, h2, h3 {
+    font-weight: 500;
+}
+
+img, video {
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 1rem 0;
+}
+
+[tooltip]:before {
+    opacity: 0;
+    position: absolute;
+    margin-top: 15px;
+    padding: 4px 8px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 9px 27px 0 hsla(0,0%,0%,0.10), 0 3px 9px 0 hsla(0,0%,0%,0.10);
+    font-size: 13px;
+    transition: var(--transition-small);
+    max-width: 200px;
+}
+
+[tooltip]:hover:before {
+    opacity: 1;
+    margin-top: 20px;
+}
+
+[tooltip]:after {
+    content: "?";
+    display: inline;
+    position: relative;
+    font-size: 11px;
+    bottom: 4px;
+}
+
+.carrier:before {
+    content: var(--dictionary-carrier);
+}
+
+.interactable {
+    box-shadow: 0 0px 0px 1px hsla(0,0%,0%,0.10);
+    transition: var(--transition-small);
+}
+
+.interactable:hover {
+    border-color: transparent;
+    box-shadow: 0 9px 27px 0 hsla(0,0%,0%,0.10);
+}
+
+.interactable:active {
+    box-shadow: 0 3px 9px 0 hsla(0,0%,0%,0.10);
+}
+
+.two_column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.two_column > * {
+    width: calc(50% - var(--layout-bleeding) / 4);
+}
+
+.lightbox {
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: hsla(0, 0%, 100%, .8);
+    z-index: 666;
+    margin-bottom: -100vh;
+    margin-top: -60px;
+    margin-left: -60px;
+    padding: var(--layout-bleeding);
+    box-sizing: border-box;
+    display: flex;
+    opacity: 1;
+    transition: var(--transition-small);
+    transform: scale(1);
+}
+
+.lightbox_hidden {
+    opacity: 0;
+    transform: scale(.9);
+    z-index: -1;
+}
+
+.close_lightbox {
+    -webkit-appearance: none;
+    border-radius: 666px;
+    font-size: 3em;
+    line-height: 1;
+    padding: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: var(--layout-bleeding);
+    background-color: white;
+    border: none;
+}
+
+.article_wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.full_width {
+    width: 100%;
+}
+
+.extra_width {
+    width: calc(100% + var(--layout-bleeding) * 2);
+    position: relative;
+    margin-left: calc(var(--layout-bleeding) * -1);
+}
+
+.contain {
+    object-fit: contain;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 9px 27px 0 hsla(0,0%,0%,0.10);
+    overflow: hidden;
+}
+
+ul {
+    list-style: initial;
+}
+
+ol, ul {
+    padding-inline-start: 0;
+}
+
+li > ul, p > ul, li > ol, p > ol {
+    padding-inline-start: 20px;
+}
