@@ -45,6 +45,36 @@ img, video {
     margin: 1rem 0;
 }
 
+details {
+    padding: calc(var(--layout-bleeding) / 4) var(--layout-bleeding);
+    border-radius: 8px;
+    background-color: transparent;
+    transition: var(--transition-small);
+}
+
+details[open] {
+    background-color: hsla(0,0%,0%,0.05);
+}
+
+summary {
+    margin: calc(var(--layout-bleeding) / 4 * -1) calc(var(--layout-bleeding) * -1);
+    padding: calc(var(--layout-bleeding) / 4) var(--layout-bleeding);
+    border-radius: 8px;
+}
+
+details[open] > summary {
+    border-radius: 8px 8px 0 0;
+}
+
+details[open] > summary:hover {
+    border-radius: 8px;
+}
+
+dt {
+    font-weight: 500;
+    font-style: italic;
+}
+
 [tooltip]:before {
     opacity: 0;
     position: absolute;
