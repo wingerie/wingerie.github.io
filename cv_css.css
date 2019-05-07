@@ -185,6 +185,10 @@ tbody > tr {
 
 @media (max-width: 639px) {
 
+    :root {
+        --font-size-base: 18px;
+    }
+
     thead, tbody {
         display: block;
     }
