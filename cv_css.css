@@ -5,7 +5,11 @@
     --layout-s: 1em;
     --layout-l: 4em;
 
-    --transition-small: all ease-in-out 150ms;
+    --transition-medium: all ease-in-out 300ms;
+}
+
+* {
+    transition: var(--transition-medium);
 }
 
 body {
@@ -19,6 +23,15 @@ body {
 
 a {
     display: inline-block;
+    color: rgba(0, 122, 255, 1);
+    background-color: rgba(0, 122, 255, .1);
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 0 calc(var(--font-size-base) / 2);
+}
+
+a:hover {
+    background-color: rgba(0, 122, 255, .2);
 }
 
 h3 {
@@ -79,6 +92,10 @@ td > p:first-child {
     margin-top: 0;
 }
 
+.contacts > * {
+    margin: calc(var(--font-size-base) / 5) calc(var(--font-size-base) / 5) calc(var(--font-size-base) / 5) 0;
+}
+
 tbody > tr {
     padding-bottom: var(--layout-l);
     break-inside: avoid;
@@ -97,6 +114,7 @@ tbody > tr {
     margin-right: calc(var(--layout-s) / 4);
     vertical-align: middle;
     top: -1px;
+    mix-blend-mode: darken;
 }
 
 .emoji {
@@ -141,6 +159,18 @@ tbody > tr {
     .print_url {
         display: inline;
     }
+
+    a {
+        background-color: transparent;
+        border-radius: 0;
+        text-decoration: none;
+        padding: 0;
+        color: black;
+    }
+
+    a + a:before, .print_url + a:before {
+        content: ", ";
+    }
 }
 
 @media (max-width: 959px) {
@@ -153,7 +183,7 @@ tbody > tr {
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 639px) {
 
     thead, tbody {
         display: block;
