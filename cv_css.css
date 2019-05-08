@@ -47,6 +47,14 @@ body {
     cursor: pointer;
 }
 
+@supports (-webkit-backdrop-filter: blur(3px)) {
+    .language_wrapper button {
+        box-shadow: 0 0px 0px 1px hsla(0,0%,0%,0.05);
+        background-color: hsla(0, 0%, 100%, 0.6);
+        -webkit-backdrop-filter: blur(3px);
+    }
+}
+
 .language_wrapper button:hover {
     box-shadow: 0 9px 27px 0 hsla(0,0%,0%,0.10);
 }
