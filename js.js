@@ -51,11 +51,13 @@ function swapLocale(locale) {
     if (locale == "ru") {
         Array.from(ru).map(x => x.classList.remove("hidden"));
         Array.from(en).map(x => x.classList.add("hidden"));
-        window.history.pushState("", "", "?ru");
+        window.history.pushState("", "Радомир Купфер, продуктовый дизайнер, резюме", "?ru");
+        document.title = "Радомир Купфер, продуктовый дизайнер, резюме";
     } else {
         Array.from(en).map(x => x.classList.remove("hidden"));
         Array.from(ru).map(x => x.classList.add("hidden"));
-        window.history.pushState("", "", "?en");
+        window.history.pushState("", "Radomir Kupfer, Product Designer, CV", "?en");
+        document.title = "Radomir Kupfer, Product Designer, CV";
     }
 
     body.classList.remove("faded");

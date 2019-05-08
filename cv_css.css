@@ -24,9 +24,9 @@ body {
 }
 
 .language_wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: sticky;
+    top: var(--layout-l);
+    z-index: 666;
 }
 
 .language_wrapper button {
@@ -41,6 +41,8 @@ body {
     border: none;
     font-size: calc(var(--font-size-multiplier) * 1em);
     line-height: 1em;
+    position: absolute;
+    right: 0px;
 }
 
 .language_wrapper button:hover {
@@ -121,10 +123,6 @@ tr > td:first-child {
 
 td {
     vertical-align: top;
-}
-
-td > p:first-child {
-    margin-top: 0;
 }
 
 .contacts > * {
