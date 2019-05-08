@@ -22,3 +22,42 @@ function close_lightbox() {
 
     document.getElementsByTagName("body")[0].classList.toggle("no_scroll");
 }
+
+function localeOnLoad() {
+    var regex = RegExp(/([a-z]+-)+/);
+    var locale;
+
+    if (window.location.search == "") {
+        if (regex.test(navigator.language) == "ru-") {
+            locale = "ru";
+        } else {
+            locale = "en";
+        }
+    } else {
+        locale = window.location.search.slice(1);
+    }
+    console.log(locale);
+    
+    swapLocale(locale);
+}
+
+function swapLocale(locale) {
+    var ru = document.getElementsByClassName("ru");
+    var en = document.getElementsByClassName("en");
+    var body = document.getElementsByClassName("article_wrapper")[0];
+
+    body.classList.add("faded");
+
+    if (locale == "ru") {
+        Array.from(ru).map(x => x.classList.remove("hidden"));
+        Array.from(en).map(x => x.classList.add("hidden"));
+        window.history.pushState("", "", "?ru");
+    } else {
+        Array.from(en).map(x => x.classList.remove("hidden"));
+        Array.from(ru).map(x => x.classList.add("hidden"));
+        window.history.pushState("", "", "?en");
+    }
+
+    body.classList.remove("faded");
+}
+
