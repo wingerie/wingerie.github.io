@@ -157,16 +157,8 @@ tbody > tr {
     min-width: calc(var(--font-size-base) / 3 * 4);
 }
 
-.print_url {
+.print_only {
     display: none;
-}
-
-.print_url:before {
-    content: "(";
-}
-
-.print_url:after {
-    content:")";
 }
 
 .occupation {
@@ -238,7 +230,7 @@ tbody > tr {
         margin: 0;
     }
 
-    .print_url {
+    .print_only {
         display: inline;
     }
 
@@ -248,9 +240,5 @@ tbody > tr {
         text-decoration: none;
         padding: 0;
         color: black;
-    }
-
-    a + a:before, .print_url + a:before {
-        content: ", ";
     }
 }
