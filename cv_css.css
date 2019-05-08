@@ -25,6 +25,7 @@ body {
 
 .language_wrapper {
     position: sticky;
+    position: -webkit-sticky;
     top: var(--layout-l);
     z-index: 666;
 }
