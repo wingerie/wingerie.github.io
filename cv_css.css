@@ -105,7 +105,6 @@ section:last-child {
 }
 
 table {
-    break-inside: avoid;
 }
 
 .article_wrapper {
