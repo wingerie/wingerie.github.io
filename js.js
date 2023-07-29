@@ -24,7 +24,7 @@ function close_lightbox() {
 }
 
 function localeOnLoad() {
-    var regex = RegExp(/([a-z]+-)+/);
+    /*var regex = RegExp(/([a-z]+-)+/);
     var locale;
 
     if (window.location.search == "") {
@@ -38,10 +38,13 @@ function localeOnLoad() {
     }
     console.log(locale);
     
-    swapLocale(locale);
+    swapLocale(locale);*/
+
+    var body = document.getElementsByClassName("article_wrapper")[0];
+    body.classList.remove("faded");
 }
 
-function swapLocale(locale) {
+/*function swapLocale(locale) {
     var ru = document.getElementsByClassName("ru");
     var en = document.getElementsByClassName("en");
     var body = document.getElementsByClassName("article_wrapper")[0];
@@ -61,5 +64,5 @@ function swapLocale(locale) {
     }
 
     body.classList.remove("faded");
-}
+}*/
 

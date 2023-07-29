@@ -45,6 +45,8 @@ body {
     position: absolute;
     right: 0px;
     cursor: pointer;
+    width:2em;
+    height:2em;
 }
 
 @supports (-webkit-backdrop-filter: blur(3px)) {
